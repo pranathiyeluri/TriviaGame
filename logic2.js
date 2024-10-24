@@ -61,7 +61,7 @@ class Game {
     `;
 
     const answersContainer = document.querySelector(".answers");
-    answersContainer.innerHTML = ''; // Clear previous answers
+    answersContainer.innerHTML = ''; 
 
     answers.forEach(answer => {
       const button = document.createElement('button');
@@ -84,9 +84,9 @@ class Game {
 
   verifyAnswer(selectedAnswer) {
     const correctAnswer = this.questions[this.currentQuestion].correctAnswer;
-    const resultMessage = document.querySelector("#scores"); // Using the score element to display results temporarily
+    const resultMessage = document.querySelector("#scores"); 
 
-    // Check if the selected answer is correct
+   
     if (selectedAnswer === correctAnswer) {
       this.currentPlayer.score += this.calculatePoints(this.currentQuestion);
       resultMessage.textContent = "Correct!";
@@ -96,7 +96,6 @@ class Game {
       resultMessage.style.color = "red";
     }
 
-    // Show the result and wait for 2 seconds before moving to the next question
     resultMessage.style.display = "block";
     setTimeout(() => {
       resultMessage.style.display = "none";
